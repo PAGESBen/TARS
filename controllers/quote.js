@@ -21,19 +21,15 @@ exports.getOneSauce = (req, res, next) => {
         .catch(error => res.status(404).json({error}));
 };
 
-//création d'une sauce
-exports.postOneSauce = (req, res, next) => {
-    const sauceObject = JSON.parse(req.body.sauce);
-    const sauce = new Sauce({
-        ...sauceObject,
-        likes : 0, 
-        dislikes : 0,
-        usersLiked: [], 
-        usersDisliked : [],
+//création d'une citation
+exports.postOneQuote = (req, res, next) => {
+    const quoteObject = JSON.parse(req.body.quote);
+    const quote = new Quote ({
+        ...quoteObject,
         imageUrl : generateImgUrl(req)
     });
-    sauce.save()
-        .then(() => res.status(201).json({ message : 'Sauce ajoutée avec succès !'}))
+    quote.save()
+        .then(() => res.status(201).json({ message : 'citation ajoutée avec succès !'}))
         .catch(error => res.status(400).json({error}));
 };
 
