@@ -8,7 +8,7 @@ const app = express()
 
 //Routes
 const userRoutes = require('./routes/user');
-const sauceRoutes = require('./routes/sauce');
+const quoteRoutes = require('./routes/quote');
 
 //Sécurité : CORS
 app.use((req, res, next) => {
@@ -29,7 +29,7 @@ app.use(express.json());
 app.use('/images', express.static(path.join(__dirname, 'images'))); //permet à l'app d'aller chercher les images dans le dossier image
 
 //on crée des middleware, l'attribut next permet de passer au middleware suivant : 
-app.use('/api/sauces', sauceRoutes);
+app.use('/api/sauces', quoteRoutes);
 app.use('/api/auth', userRoutes);
 
 // Exportation de l'app

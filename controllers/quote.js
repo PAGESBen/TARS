@@ -1,4 +1,4 @@
-const Sauce = require('../models/Sauce');
+const Sauce = require('../models/Quote');
 const fs = require('fs');
 const { urlToHttpOptions } = require('url');
 
