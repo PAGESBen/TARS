@@ -1,17 +1,10 @@
 const mongoose = require('mongoose');
 
 const quoteSchema = mongoose.Schema({
-  userId: { type: String, required: true },
-  name: { type: String, required: true },
-  manufacturer: { type: String, required: true },
-  description: { type: String, required: true },
-  mainPepper: { type: String, required: true },
+  Quote: { type: String, required: true },
+  Author: { type: String, required: true },
   imageUrl: { type: String, required: true },
-  heat: { type: Number, required: true },
-  likes: { type: Number, required: true },
-  dislikes: { type: Number, required: true },
-  usersLiked: { type: Array, required: false },
-  usersDisliked: { type: Array, required: false },
+  proposedBy: { type: string, required: false },
 });
 
 module.exports = mongoose.model('quote', quoteSchema);
